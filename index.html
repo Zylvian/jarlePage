@@ -2,38 +2,100 @@
 <HEAD>
     
     <style>
+        
+        @font-face { font-family: Karla; src: url('karla.ttf'); } 
+        @font-face { font-family: Karla; src: url('karlaBold.ttf'); font-weight: bold;} 
+        
 body {
-    background-image: url(shitpic.jpg); 
-    background-size: cover;
-    padding: 300px;
-    text-align: center;
-    font-size: 160px;
-    margin-top:0px;
-    font-weight: bold;
+    background-image: url(bgpic.png); 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: 90%;
+    background-color: rgb(0, 88, 229, 0.5);
+
     color: white;
-    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 5px;
-  -webkit-text-stroke-color: black;
+   
 }
         
+        a:visited { text-decoration: none; color:white; }
+a:hover { text-decoration: none; color:blue; }
+a:focus { text-decoration: none; color:yellow; }
+a:hover, a:active { text-decoration: none; color:black }
+        
+        #future {
+             margin-top:0px;
+            padding: 300px;
+             font-size: 160px;
+        }
         background {
             width: 100%;
         }
+         #jarle {
+        font-family:Karla;
+             font-weight: bold;
+             font-size: 60px;
+             letter-spacing: -5px;
+            position: relative;
+             left: 30px;
+              -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+    }
+    
+        #venstre {
+            position: relative;
+            left: 300px;
+            top: 25%;
+            display:block;
+            background-color: rgb(0, 0, 0,0.8);
+            width: 500px;
+            border: 3px solid #73AD21;
+        }
+        
+        #underlings {
+            font-family:Karla;
+            position: relative;
+            left: 30px;
+            font-size: 35px;
+            -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 0.8px;
+            -webkit-text-stroke-color: black;
+            padding-bottom: 20px;
+        }
+        
         </style>
+   
+    
 </HEAD>
 <body>
     
+    <div id="venstre">
+        <p id="jarle">Jarle H Wallevik</p>
+        <div id="underlings">
+            <p>- Album</p>
+            <p>- School projects</p>
+            <a href="https://www.youtube.com/watch?v=CVBTy3bPbgI">- Resume</a>
+            </div>
+    </div>
+    
+    <!--
     <p>Hei det er meg</p>
-    <audio controls>
+    <audio id="audio" controls>
   <source src="DONALD_BLADE.mp3" type="audio/mpeg">
 </audio>
-    </body>
+    <input type="range" min="1" max="100" value="50" id="volume">
     
     <script>
-    
-    var audio = new Audio('DONALD_BLADE.mp3');
-        audio.play();
-    
+    var audio = document.getElementById("audio");
+    var volume = document.getElementById("volume");
+      
+        
+       volume.oninput = function(){
+            audio.volume = (volume.value / 100)-0.05;
+        }
     </script>
-
+-->
+    
+    </body>
 </html>
