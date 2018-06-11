@@ -1,70 +1,258 @@
+<!DOCYPE html>
 <html>
-    <link rel="icon" type="image/png" href="jarleIcon.png"/>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <HEAD>
+    
+    <link rel="stylesheet" href="style/normalizer.css">
+    
+    <!--
+    !!!
+        Forgive this code, for I have sinned. 
+    !!!
+    -->
+    
     
     <style>
         
         @font-face { font-family: Karla; src: url('karla.ttf'); } 
         @font-face { font-family: Karla; src: url('karlaBold.ttf'); font-weight: bold;} 
         
-body {
-    background-image: url(bgpic.png); 
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
-    background-size: 90%;
-    background-color: rgb(0, 88, 229, 0.5);
+        span {
+            font-weight: normal;
+        }
+        
+        .wrapper {
+        /* max-width:1400px;
+        margin: 0 auto; */
+        }
+        
+        .banner {
+            /* The image used */
+                background-image: url("pics/bgBilTamGreenCenter.png");
 
-    color: white;
-   
-}
+            /* Full height */
+            height: 100%; 
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 0;
+            
+            }
+        
+        .maindiv {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        
+        .headline{
+            font-weight: 100;
+            position: absolute;
+            z-index: 1;
+            top: 30%;
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .textdiv {
+            width: 35%;
+            padding-left: 10%;
+            padding-top: 50px;
+            padding-bottom: 200px;
+            text-align: center;
+            font-family: Karla;
+            font-weight: bold;
+            font-size: 70px;
+            letter-spacing: -5px;
+            position: relative;
+            text-align: left;
+           
+        }
+        
+          .displaydiv {
+            width: 50%;
+            /* display: flex;
+            align-items: center;
+            border:1px solid red; */
+              transition: width 1s;
+            transition: height 1s;
+        }
+        
+        .dynamicdisplaydiv {
+            float: left;
+/*            margin-top: -30px;*/
+            height: auto;
+            width: 500px;
+            background-image: url(bgpic%20test.png);
+            background-repeat: no-repeat;
+            background-size:contain;
+            transition: width 1s;
+            transition: height 1s;
+            
+        }
+        
+        .dynamicdisplaya{
+             border: 0;
+            background-color: transparent;
+            font-size: 50px;
+            color: white;
+            padding: 30px;
+            cursor: pointer;
+            
+        }
+        
+        .dynamicdisplaydiv a:hover {
+            opacity: 0.4;
+        }
+        
+        .dynamicdisplaydiv button {
+         
+            border: 0;
+            background-color: transparent;
+            font-size: 50px;
+            color: white;
+            padding: 30px;
+            cursor: pointer;
+            transition: width 1s;
+            
+        }
+        
+        a:active, a:hover, a:link {
+            text-decoration: none;
+            color: white!important;
+        }
+        
+        .links {
+            position: relative;
+            margin-top: 30px;
+            padding-left: 10px;
+            float: left;
+            cursor:pointer;
+        }
+        
+        .linespan {
+            width: 30px;
+            display: inline-block;
+            margin-bottom: 50px;
+        }
+        
+        .subp {
+            margin-bottom: 15px;
+            transition: opacity 0.1s;
+        }
+        
+        .subp:hover {
+            opacity: 0.4;
+        }
+        
+        .bottomdiv {
+            background-color: darkgrey;
+            height: 60px;
+            width: 100%;
+            text-align: center;
+            font-family: Karla;
+            font-size: 25px;
+            padding: 0 auto;
+            margin: 0 auto;
+        }
+        
+        .githubimg:hover {
+            opacity: 0.7;
+        }
+        
+        .githubimg {
+            position: relative;
+            height: 70%;
+            float: right;
+            margin: 0 auto;
+            margin-right: 20px;
+            margin-top: -40px;
+            
+        }
+        
+        .bottomtext {
+            margin: auto;
+            padding: 10px;
+            width: 40%;
+        }
+        
+        .bottomspan {
+            width: 500px;
+            margin-right: 60px;
+            
+        }
+        
+        body {
+            /* background-image: url('pics/bgBilTamGreenCenter.png'); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment:fixed;
+            background-position: center; 
+            background-color: rgb(0, 88, 229, 0.5);
+            color: white; */
+        }
         
         a:visited { text-decoration: none; color:white; }
-a:hover { text-decoration: none; color:blue; }
-a:focus { text-decoration: none; color:yellow; }
-a:hover, a:active { text-decoration: none; color:black }
+        a:hover { text-decoration: none; color:blue; }
+        a:focus { text-decoration: none; color:yellow; }
+        a:hover, a:active { text-decoration: none; color:black }
         
-        #future {
-             margin-top:0px;
-            padding: 300px;
-             font-size: 160px;
+        @media only screen and (max-width: 769px){
+            p{
+                font-size:30px;
+            }
         }
-        background {
-            width: 100%;
+        
+        #pictureOwner {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+            -webkit-text-fill-color: white;
+            font-family: Karla;
         }
+        
+        .arrow {
+            display: inline-block;
+            position: absolute;
+            left: 47%;
+            top: 88%;
+        }
+        
+        .arrow:hover{
+            opacity: 0.4;
+        }
+        
+        #arrowpic {
+            /* margin-left: -27px; */
+            transform: rotate(90deg);
+            height: 10%;
+            opacity: 0.8;
+            cursor: pointer;
+            display: inline-block;
+            behavior: 'smooth';
+        }
+        
          #jarle {
-        font-family:Karla;
-             font-weight: bold;
-             font-size: 60px;
-             letter-spacing: -5px;
+            font-family: Karla;
+            font-weight: bold;
+            font-size: 100px;
+            letter-spacing: -5px;
             position: relative;
-             left: 30px;
-              -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
+            text-align: center;
+
+            -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: black;
     }
     
-        #venstre {
-            position: relative;
-            left: 300px;
-            top: 25%;
-            display:block;
-            background-color: rgb(0, 0, 0,0.8);
-            width: 500px;
-            border: 3px solid #73AD21;
+        #subheadline {
+            font-weight: bold;
+             font-size: 77px;
         }
         
-        #underlings {
-            font-family:Karla;
-            position: relative;
-            left: 30px;
-            font-size: 35px;
-            -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-            -webkit-text-stroke-width: 0.8px;
-            -webkit-text-stroke-color: black;
-            padding-bottom: 20px;
-        }
         
         </style>
    
@@ -72,14 +260,90 @@ a:hover, a:active { text-decoration: none; color:black }
 </HEAD>
 <body>
     
-    <div id="venstre">
-        <p id="jarle">Jarle H Wallevik</p>
-        <div id="underlings">
-            <p>- Album</p>
-            <p>- School projects</p>
-            <a href="https://www.youtube.com/watch?v=CVBTy3bPbgI">- Resume</a>
+    <div class="wrapper">
+        <div class="headline"> <p id="jarle">Jarle H. Wallevik</p></div>
+            <div class="banner"><div id="pictureOwner">Picture: Jarle H. Wallevik</div><div class="arrow"><img src="pics/next.png" id="arrowpic" onclick="scrolldown()"></div></div>
+        
+        <div class="maindiv">
+    
+            <div class="textdiv">
+                <p id="subheadline">About me:</p>
+                <div class="links">
+                    <p class="subp" onclick="jarleSpawn()">- <span class="linespan"></span>Picture</p>
+                    <p class="subp" onclick="cvSpawn()">- <span class="linespan"></span>CV</p>
+                    <p class="subp"><span class="linespan"></span></p>
+                </div>
             </div>
-    </div>
+            <div class="displaydiv">
+                <div class="dynamicdisplaydiv"></div>
+            </div>
+        </div>
+        
+        <div class="bottomdiv">
+            <div class="bottomtext">
+                <span class="bottomspan"> e-mail: jovlisen@gmail.com </span>
+                <span>tlf: 47828902</span>
+            </div>
+            
+            <div class="bottomrighifghticons">
+                <a href="https://github.com/Zylvian/jarlePage"><img src="pics/githubicon.png"  class="githubimg"></a>
+                <a href="https://github.com/Zylvian/jarlePage"><img src="pics/fb-art.png" href="https://github.com/Zylvian/jarlePage" class="githubimg"></a>
+                
+            </div>
+           
+            
+        </div>
+         </div>
+    
+    
+       <script>
+           
+            var display = document.getElementsByClassName("dynamicdisplaydiv")[0];   
+            function cvSpawn(){
+                clearCss();
+                transitions();
+                // display.style.backgroundImage = "url('pics/bgBilGreenBetter.png')";
+                // display.style.height = "200px";
+                display.innerHTML = "<a href='loadpdf.html' class='dynamicdisplaya'>Read</a>";
+                display.innerHTML += "<a href='loadpdf.pdf' class='dynamicdisplaya' download>Download</a>";
+                display.style.marginTop = "25%";
+           }
+           
+           function jarleSpawn(){
+               
+               clearCss();
+               transitions();
+               display.style.WebkitTransition = 'width 1s';
+               display.style.WebkitTransition = 'height 1s';
+               display.style.MozTransition  = 'height 1s';
+               display.style.MozTransition  = 'width 1s';
+               display.style.backgroundImage = "url('pics/jarlepic.png')";
+               display.style.marginTop = "20px";
+                display.style.height = "60%";
+               display.style.width = "40%";
+               
+                
+           }
+           
+           function clearCss(){
+               display.style.backgroundImage = "url('bgpic test2.png')";
+               display.style.backgroundSize = "cover";
+               display.style.height = "auto";
+               display.style.width = "auto";
+               display.innerHTML = "";
+               display.style.marginTop = "0%";
+           }
+           
+           function transitions(){
+               display.style.WebkitTransition = 'width 1s';
+               display.style.WebkitTransition = 'height 1s';
+           }
+           
+           function scrolldown(){
+               console.log("alive");
+               window.scrollBy(0,1000);
+           }
+        </script>
     
     <!--
     <p>Hei det er meg</p>
@@ -98,6 +362,6 @@ a:hover, a:active { text-decoration: none; color:black }
         }
     </script>
 -->
-    
+   
     </body>
 </html>
